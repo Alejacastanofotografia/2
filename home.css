@@ -804,17 +804,17 @@ font-size: 18px;
 	height: 100vh;
 	margin:auto;
 }   .containersobremi {
-	background-image: url('Fondos/img1.jpg');
+	background-image: url('https://alejacastanofotografia.github.io/slider/Fondos/img1.jpg');
 	background-size: cover;
 	background-position: 0% 50%;
 	background-attachment: fixed;
 }   .containerContacto {
-	background-image: url('Fondos/img3.jpg');
+	background-image: url('https://alejacastanofotografia.github.io/slider/Fondos/img3.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }
     .containerServicios {
-	background-image: url('Fondos/img2.jpg');
+	background-image: url('https://alejacastanofotografia.github.io/slider/Fondos/img2.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -835,20 +835,20 @@ font-size: 18px;
 	background-position: 50% 0%;
     }
 	.containerServicios {
-    background-image: url('Fondos/img4.jpg');	
+    background-image: url('https://alejacastanofotografia.github.io/slider/Fondos/img4.jpg');	
     height:300px;	
 	}
 }
 @media (max-width:600px) {
 	.containerContacto {
-	background-image: url('Fondos/img6.jpg');
+	background-image: url('https://alejacastanofotografia.github.io/slider/Fondos/img6.jpg');
 	background-size: cover;
 	background-attachment: fixed;
     }
 }
 @media (max-width:600px) {
 	.containersobremi {
-	background-image: url('Fondos/img1.jpeg');
+	background-image: url('https://alejacastanofotografia.github.io/slider/Fondos/img1.jpeg');
 	background-size: cover;
 	background-attachment: fixed;
     }
@@ -866,7 +866,7 @@ font-size: 18px;
 	z-index:1;
 	background: linear-gradient(to bottom,rgba(0,0,0, 0.01), rgba(0,0,0, 0.3),rgba(0,0,0, 0.9),rgba(0,0,0, 0.3), rgba(0,0,0, 0.01));
 	background: linear-gradient(to bottom,rgba(0,0,0, 0.5), rgba(0,0,0, 0.8),rgba(0,0,0, 1),rgba(0,0,0, 0.8), rgba(0,0,0, 0.5));
-	background: rgba(0,0,0, 0.9);
+	background: rgba(0,0,0, 0.3);
 	padding: 0px 15px;
 }
 .container360text {	left:0}
