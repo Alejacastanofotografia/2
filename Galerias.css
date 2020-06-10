@@ -67,6 +67,7 @@ h4 {
 }   
 #menuGalerias:hover {
     width: 30%;
+	z-index: 10;
 }
  @keyframes cambiarfondomenu {
         0%{background: url('Fondos/img4.jpg');
