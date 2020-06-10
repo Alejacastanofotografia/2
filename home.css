@@ -274,7 +274,7 @@ h1 {
 	font-style:italic;
 	text-shadow: 1px 1px 1px #000;
 	width:30%;
-	z-index: 5;
+	z-index: 1;
 }
 @media (max-width:480px){
 	#pslider {
@@ -864,9 +864,8 @@ font-size: 18px;
 	top:0;
 	overflow: hidden;
 	z-index:1;
-	background: linear-gradient(to bottom,rgba(0,0,0, 0.01), rgba(0,0,0, 0.3),rgba(0,0,0, 0.9),rgba(0,0,0, 0.3), rgba(0,0,0, 0.01));
 	background: linear-gradient(to bottom,rgba(0,0,0, 0.5), rgba(0,0,0, 0.8),rgba(0,0,0, 1),rgba(0,0,0, 0.8), rgba(0,0,0, 0.5));
-	background: rgba(0,0,0, 0.3);
+	background: rgba(0, 0, 0, 0.9);
 	padding: 0px 15px;
 }
 .container360text {	left:0}

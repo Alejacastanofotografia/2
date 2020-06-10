@@ -320,8 +320,8 @@ animation: flashreflejo 4s infinite;
 	margin-top: 15px;
 }
 .galeria img {
-	width: 325px; /*medida global de la imagen*/
-	height: 210px;
+	width: 330px; /*medida global de la imagen*/
+	height: 215px;
 	object-fit: cover;	
  
 	
@@ -330,8 +330,8 @@ animation: flashreflejo 4s infinite;
 
 
 .new {
-	width: 320px;
-    height: 210px;
+	width: 330px;
+    height: 215px;
 	position:absolute;
 	transform:translate(0%, -102%);
 	border-radius: 15px;
