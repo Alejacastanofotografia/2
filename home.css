@@ -24,43 +24,14 @@ header {
 	align-items: center;	
 	background: linear-gradient(to bottom,rgba(0,0,0, .9), rgba(0,0,0, .01));
 }   
-    @media(max-width:1173px){
-		.menuHeader{
-			display: block;
-			background: linear-gradient(to bottom,rgba(0,0,0, .9), rgba(0,0,0, .7));
-		}
-	}     
- @media(max-width:768px){
-		.menuHeader{
-			display: block;
+    
 
-		}
-	}
 /**********************************************/
 
 
 /*botones del header*/
 
-.menu1 ul {
-} 
-          @media (max-width:1173px){
-	   .menu1 ul {
-		   width:100%;
-		   display:flex;
-		   justify-content: center;
-	       align-items: center;
-		   
-	   }
-} 
-          @media (max-width:768px){
-	   .menu1 ul {
-		   width:100%;
-		   display:flex;
-		   justify-content: space-around;
-	       align-items: center;
-		   
-	   }
-}  
+   
 .menu1 ul li {
 	display: inline-block;
 	list-style: none;	
@@ -112,7 +83,79 @@ header {
 	     border-radius: 0px;
 	}
 }
-
+/*estilos login */
+/*estilos login*/
+#Iniciarsesiondiv, #Cerrarsesiondiv{
+    position:fixed;
+	z-index: 50;
+	top: 0; 
+	right: 0;
+	display: flex;
+	justify-content:space-around;
+	align-items: center;
+}
+#Cerrarsesiondiv {
+    display: none;
+}
+.textoUser {
+	font-family: var(--main-font-family);
+    color: #909090;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 0px 5px 0px 0px;
+}
+.cerrarLoginX {
+   color: #fff; 
+   position:absolute; 
+   top: 1%; 
+   right: 2%;
+   font-size: 30px;   
+}
+.cerrarLoginX:hover {
+   font-size: 35px;  
+}
+#login {
+    display: none;
+    position: fixed; 
+	width:100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 200;  
+	justify-content: center;
+	align-itmes: center;
+    background: url('Fondos/img9.jpg');
+	background-size: cover;
+}
+.formLogin {
+    position: absolute; 
+	color: #fff;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width:35%;
+	height:100%;
+	background: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 900px){
+    .formLogin {
+	    width:60%;  
+	}
+}
+@media (max-width: 600px){
+    .formLogin {
+	    width:100%;  
+	}
+}
+.camposLogin {
+   padding: 12px;
+   width:50%;
+   margin: 10px;
+}
+/*finlogin*/
+/*finlogin*/
 
 #opcionhome2 {display:none}
 @media (max-width:420px) {
@@ -125,25 +168,47 @@ header {
 	align-items: center;
 	
 }
- @media(max-width:1173px) {
-    #logoh1opcion {
-		width:100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-}
+
 #desplegable {
 	display: none;
 	margin-right: 20px;
 	position: relative;
 	color: #fff;
 }
-   @media(max-width:1173px) {
-	   #desplegable{
+         @media (max-width:900px){
+	    .menuHeader{
+			display: block;
+
+		}
+	   .menu1 ul {
+		   width:100%;
+		   display:flex;
+		   justify-content: center;
+	       align-items: center;
+		}
+		#desplegable{
 		   display: block;
+	    }
+	   #logoh1opcion {
+		width:100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	    }
+		#Iniciarsesiondiv{
+			display: none;
+		}
+		#cerrarloginpc {
+			display:none;
+		}
+} 
+          @media (max-width:768px){
+	   .menu1 ul {
+		    justify-content: space-around;
+	       
 	   }
-   }
+}
+  
 h1 {
 	color: #b1b1b1;
 	text-shadow:1px 1px 1px #000;
@@ -156,24 +221,7 @@ h1 {
 	padding: 0px 10px 0px 10px;
 }
     
-	    @media(max-width:1173px){
-		h1{			
-		    text-align: center;
-			padding:5px 0px 10px 0px;
-		}
-	}   @media(max-width:768px){
-		h1{			
-		    text-align: center;
-			padding:5px 0px 0px 0px;
-		}
-	}
-       @media(max-width:768px) and (orientation: landscape){
-		h1{
-			 text-align: center;
-			padding:0px 0px 0px 0px;
-			
-		}
-	}
+
 	   @media(max-width:480px) {
 		h1 {
 		   font-size: 24px;	
@@ -876,7 +924,7 @@ font-size: 18px;
     .containerContactotext { width:50%}
 }
 @media (max-width:600px) {
-	.container360text, .containersobremitext,  .containerServiciostext  {
+	.container360text, .containersobremitext,  .containerServiciostext, .containerContactotext {
 		position:relative;
 		margin:auto;
 		width:90%;
@@ -919,13 +967,13 @@ font-size: 18px;
 	}
 }	
 @media (max-width:420px){
-	.h360, .h3sobremi, .h3Contacto, ..h3Servicios{
+	.h360, .h3sobremi, .h3Contacto, .h3Servicios{
 		font-size: 26px;
 		padding:5px;
 	}
 }
 
-.p360, .pSobremi, .pContacto, .pServicios{
+.p360, .pSobremi, .pContacto, .pServicios, .pLogin{
 	padding:10px 2px;
 	color:#d5d5d5;
 	text-align: center;
@@ -1002,6 +1050,7 @@ font-size: 18px;
 	border-style: inset;
     margin-top: 6px;
 	background:  rgba(255, 80,0, 0.4);
+	font-size:18px;
 }
 
 .Enlaces:hover {

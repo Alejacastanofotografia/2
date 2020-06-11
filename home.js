@@ -526,15 +526,49 @@ function defaultTema(){
 		h[i].style.borderBottom = '1px solid #151515';
 	}
 }
+/*seccion login*/
+/*seccion login*/
+function mostrarlogin(){
+        document.getElementById('login').style.display = 'flex';
+}
+function loginuser(){
+var documentoUsuario= document.getElementById('documento').value;
+    switch(documentoUsuario){
+	case '1':
+	    document.getElementById('nombreUsuario').innerHTML = 'Violeta Golosa';
+		alert('Bienvenida Violeta Golosa, tus fotografías se encuentran publicadas en la pestaña Sesiones/Retratos');
+		document.getElementById('Iniciarsesiondiv').style.display = 'none';
+		document.getElementById('Cerrarsesiondiv').style.display = 'flex';
+		document.getElementById('login').style.display = 'none';
+		break;
+	case '2':
+	    document.getElementById('nombreUsuario').innerHTML = 'Gaby Lala';
+		alert('Bienvenida Gaby Lalaa, tus fotografías se encuentran publicadas en la pestaña sesiones/Retratos');
+		document.getElementById('Iniciarsesiondiv').style.display = 'none';
+		document.getElementById('Cerrarsesiondiv').style.display = 'flex';
+		document.getElementById('login').style.display = 'none';
+		break;	
+	case '123456':
+	    document.getElementById('nombreUsuario').innerHTML = 'Alejandra Castaño';
+		alert('Bienvenida Alejandra Castaño, tus fotografías se encuentran publicadas en la pestaña Sesiones/Retratos');
+		document.getElementById('Iniciarsesiondiv').style.display = 'none';
+		document.getElementById('Cerrarsesiondiv').style.display = 'flex';
+		document.getElementById('login').style.display = 'none';
+		document.getElementById('menu2Alejandra').style.display = 'block';
+		document.getElementById('menu1Alejandra').style.display = 'block';
+		document.getElementById('AlejandraCastano').style.display = 'block';
+		document.getElementById("menu2Alejandra").click();
+		document.getElementById("menu1Alejandra").click();
+		break;
+    
+	
 		
+    default:
+	     document.getElementById('escribir').innerHTML = 'El número de documento ingresado no existe en nuestra base de datos, por favor verificalo o contactanos para más información.' ;
+	}
+    
 
-/*cambiar temas*/
-/*cambiar temas*/
-/*cambiar temas*/
+}
+/*seccion login*/
+/*seccion login*/
 
-/*lightbox*/
-/*lightbox*/
-//abrir y cerrar en cada seccion
-
-/*lightbox*/
-/*lightbox*/

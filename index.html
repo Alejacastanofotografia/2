@@ -57,8 +57,8 @@
 					<button>Cambiar tema</button>
 					<button>Vintage<img  id="vintage" src="Iconos/Switch2.png" onclick="cambiarTema()"></button>
 					<button>Dark<img     id="dark" src="Iconos/Switch2.png"    onclick="defaultTema()"></button>
-					<button>Iniciar sesión<img     id="" src="Iconos/usuario.png"    onclick="()"></button>
-					<button>Cerrar sesión<img     id="" src="Iconos/usuario.png"    onclick="()" style="filter: grayscale(100%)"></button>
+					<button onclick="mostrarlogin()">Iniciar sesión<img     id="" src="Iconos/usuario.png"    ></button>
+					<button onclick="location.reload()" >Cerrar sesión<img     id="" src="Iconos/usuario.png"    style="filter: grayscale(100%)"></button>
 				    
 			</div>			
 	
@@ -70,8 +70,7 @@
 				<li><a  class="tablinks" onclick="cambiarVentana(event, 'book')"     >Books</a></li>
 				<li><a  class="tablinks" id="galerias"onclick="cambiarVentana(event, 'Galerias')"  >Sesiones</a></li>
 				<li><a  class="tablinks" onclick="cambiarVentana(event, 'SobreMi')"    >Sobre mí</a></li>
-				<li id="opcionhomea"><a  class="tablinks" onclick="cambiarVentana(event, 'Contacto')"   >Contacto</a></li>
-				
+				<li ><a style="padding-right:1px" class="tablinks" onclick="cambiarVentana(event, 'Contacto')"   >Contacto</a></li>
 		      </ul>
 			  
 		    </nav>
@@ -363,7 +362,38 @@
 		    <img src="corazon.png">
 			
 		</div>
-      
+		
+		<div id="login" >
+		    
+		    <form class="formLogin">
+			<p class="cerrarLoginX" onclick="document.getElementById('login').style.display = 'none'">X</p>
+			<p class="pLogin">Inicia sesión para visualizar tus fotografias y descargarlas.</p>  <select class="camposLogin">                         
+			    <option >Cedula</option>
+			    <option >Tarjeta de identidad</option>
+			    <option >Registro civil</option>
+			    <option >NUIP</option>
+			    <option >NIT</option>
+			</select>
+		    <input class="camposLogin" type="text" id="documento" placeholder="Número de documento">  <br>
+			<p class="Enlaces" onclick="loginuser()">Iniciar</p>         <br>
+			<p class="pLogin" style="color: #fff"id="escribir"></p>
+			</form>
+		</div>
+		
+		<!--Iniciar sesion-->
+		<div id="Iniciarsesiondiv" onclick="mostrarlogin()">
+		    <p class="textoUser">Iniciar sesión</p>
+			<p class="textoUser fas">&#xf2bd;</p>
+		</div>
+		<!--cerrar sesion-->
+		<div id="Cerrarsesiondiv" >
+		    <p class="textoUser" id="nombreUsuario" ></p>
+		    <p class="textoUser" id="cerrarloginpc"onclick="location.reload()" style="font-size:11px; font-family:FreeMono, monospace">Cerrar Sesión</p>
+		</div>
+		
+		
+
+</style>	
     </header>
 	<section  id="SobreMi" class="Ventanas">
 	
@@ -616,6 +646,7 @@
 			    <h3 class="galeriasH">Galerias</h3>
 			    <li class="tablinks2 " onclick="cambiarVentana2(event, 'adulto')">Retrato Adulto</li>
 			    <li class="tablinks2 " onclick="cambiarVentana2(event, 'infantil')" id="defaultOpen2">Retrato Infantil</li>
+			    <li class="tablinks2 " onclick="cambiarVentana2(event, 'AlejandraCastano')" id="menu1Alejandra">Alejandra Castaño</li>
 			    <li class="tablinks2" onclick="cambiarVentana2(event, 'Animales')">Animales</li>
 			    <li class="tablinks2" onclick="cambiarVentana2(event, 'flores')">Flores</li>
 			    <li class="tablinks2" onclick="cambiarVentana2(event, 'primeraComunion')">Primera Comunión</li>
@@ -631,13 +662,14 @@
   		
             <div class="menuMovil1">
 			    <button class="botonesMovil" onclick="MostrarRetratos()"><img  src="Iconos/retratosicon.png"><br>Retratos</button>
-			    <button class="botonesMovil" onclick="MostrarQuinces()"><img  src="Iconos/quincesicon.png"><br>Quinces</button>
+			    <button class="botonesMovil" onclick="MostrarQuinces()"><img  src="Iconos/15.png"><br>Quinces</button>
 			    <button class="botonesMovil" onclick="MostrarPaisajes()"><img  src="Iconos/paisajeicon.png"><br>Paisajes</button>
 			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'boda')"           ><img  src="Iconos/anillosicon.png"><br>Boda</button>
 			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'primeraComunion')"><img  src="Iconos/comunionicon.png"><br>Comunión</button>
 			</div>	
 			<div class="menuMovil2" id="Retratosmov">
 			    
+			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'AlejandraCastano')" id="menu2Alejandra" >Alejandra Castaño</button> 
 			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'infantil')"  id="defaultOpen2">Retrato infantil</button> 
 			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'adulto')"                     >Retrato Adulto</button> 
 			    <button class="botonesMovil cerrarBotonesMovil" onclick="ocultarventanas()"><i style='font-size:24px' class='fas'>&#xf107;</i></button>
@@ -645,7 +677,7 @@
 			<div class="menuMovil2" id="Quincesmov">
 			    
 			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'Prequinces')"  >Prequinces</button> 
-			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'Quinces')"                     >Quinces</button> 
+			    <button class="tablinks2 botonesMovil" onclick="cambiarVentana3(event, 'Quinces')"          >Quinces</button> 
 			    <button class="botonesMovil cerrarBotonesMovil" onclick="ocultarventanas()"><i style='font-size:24px' class='fas'>&#xf107;</i></button>
 			</div>
 			<div class="menuMovil2" id="Paisajesmov">
@@ -1048,36 +1080,36 @@ Susan Sontag
 <span>&#160;</span></p>
 	    </div>
 	<ul class="galeriaV">
-	     <li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img1.jpg'">							
-		                                                             	<img  src="infantil/img1.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img2.jpg'">							
-		                                                             	<img  src="infantil/img2.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img3.jpg'">							
-		                                                             	<img  src="infantil/img3.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img4.jpg'">							
-		                                                             	<img  src="infantil/img4.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img5.jpg'">							
-		                                                             	<img  src="infantil/img5.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img6.jpg'">							
-		                                                             	<img  src="infantil/img6.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img7.jpg'">							
-		                                                             	<img  src="infantil/img7.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img8.jpg'">							
-		                                                             	<img  src="infantil/img8.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img9.jpg'">							
-		                                                             	<img  src="infantil/img9.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img10.jpg'">							
-		                                                             	<img  src="infantil/img10.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img11.jpg'">							
-		                                                             	<img  src="infantil/img11.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img12.jpg'">							
-		                                                             	<img  src="infantil/img12.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img13.jpg'">							
-		                                                             	<img  src="infantil/img13.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img14.jpg'">							
-		                                                             	<img  src="infantil/img14.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
-		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'infantil/img15.jpg'">							
-		                                                             	<img  src="infantil/img15.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img1.jpg'">							
+		                                                             	<img  src="Infantil/img1.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img2.jpg'">							
+		                                                             	<img  src="Infantil/img2.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img3.jpg'">							
+		                                                             	<img  src="Infantil/img3.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img4.jpg'">							
+		                                                             	<img  src="Infantil/img4.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img5.jpg'">							
+		                                                             	<img  src="Infantil/img5.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img6.jpg'">							
+		                                                             	<img  src="Infantil/img6.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img7.jpg'">							
+		                                                             	<img  src="Infantil/img7.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img8.jpg'">							
+		                                                             	<img  src="Infantil/img8.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img9.jpg'">							
+		                                                             	<img  src="Infantil/img9.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img10.jpg'">							
+		                                                             	<img  src="Infantil/img10.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img11.jpg'">							
+		                                                             	<img  src="Infantil/img11.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img12.jpg'">							
+		                                                             	<img  src="Infantil/img12.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img13.jpg'">							
+		                                                             	<img  src="Infantil/img13.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img14.jpg'">							
+		                                                             	<img  src="Infantil/img14.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Infantil/img15.jpg'">							
+		                                                             	<img  src="Infantil/img15.jpg" ><div class="newvertical" ><img  src="flechas.png"><img class="heart" onclick="latir()" src="corazon.png"></div></a></li>
 		
 	</ul>
     <!--***************************************************************************************************-->
@@ -1089,16 +1121,69 @@ Susan Sontag
 		</div>
 		<p class="cerrarLight" onclick="cerrarlight('lightInfantil')">X</p>
 		    <div class="imagenLight">
-				<img id="imgInfantil"src="infantil/img1.jpg" onclick="next('imgInfantil', 'intantilTotal', 'indexcambiainfantil', 'carpetaInfantil')">
+				<img id="imgInfantil"src="Infantil/img1.jpg" onclick="next('imgInfantil', 'intantilTotal', 'indexcambiainfantil', 'carpetaInfantil')">
 			</div>
 		<div class="back" onclick="prev('imgInfantil', 'intantilTotal', 'indexcambiainfantil', 'carpetaInfantil')">&#60; </div>	
 		<div class="go" onclick="next('imgInfantil', 'intantilTotal', 'indexcambiainfantil', 'carpetaInfantil')"> > </div>
-		<input class="carpetastitulo" type="button" value="infantil" id="carpetaInfantil">
+		<input class="carpetastitulo" type="button" value="Infantil" id="carpetaInfantil">
 	</div>
 
 	</article>
 	 </section>
-	 
+	 <!--Seccion para el contenido de los usuarios solo es necesario 
+	 reemplazaro los nombres y la ruta de la carpeta con las imagenes y AGREGAR EL NOMBRE DEL ID EN EL CSS GALERIAS--->
+	 <!--Seccion para el contenido de los usuarios--->
+	 <section id="AlejandraCastano" class="galerias Ventanas2">
+	<article >
+
+		<div class="contenido">
+	<p class="frase">Puedes descargar tus fotografias en este enlace.
+
+	<span>&#160;</span></p>
+	    </div>
+	<ul class="galeria">
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img1.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img1.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img2.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img2.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img3.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img3.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img4.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img4.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img5.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img5.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img6.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img6.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img7.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img7.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img8.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img8.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img9.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img9.jpg" ></a></li>
+	    <li><a href="#" onclick="abrirlight('lightusuario1');document.getElementById('imgusuario1').src = 'sobreMi/img10.jpg'">							
+		                                                                        <img class="imgUsuarios" src="sobreMi/img10.jpg" ></a></li>
+	    
+	</ul>
+    <div id="lightusuario1">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiausuario1">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="11" id="usuario1Total">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightusuario1')">X</p>
+		    <div class="imagenLight">
+				<img id="imgusuario1"src="sobreMi/img1.jpg" onclick="next('imgusuario1', 'usuario1Total', 'indexcambiausuario1', 'carpetausuario1')">
+			</div>
+		<div class="back" onclick="prev('imgusuario1', 'usuario1Total', 'indexcambiausuario1', 'carpetausuario1')">&#60; </div>	
+		<div class="go" onclick="next('imgusuario1', 'usuario1Total', 'indexcambiausuario1', 'carpetausuario1')"> > </div>
+		<input class="carpetastitulo" type="button" value="sobreMi" id="carpetausuario1">
+	</div>
+		    
+	</article>
+	</section> 
+
+		 <!--Seccion para el contenido de los usuarios---> 
+		 <!--Seccion para el contenido de los usuarios---> 
 	 <section  id="360galeria" class="galerias Ventanas2">
 	    <h1>
 		dddddddddddddddddddddddddddddddddddddd

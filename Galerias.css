@@ -323,9 +323,14 @@ animation: flashreflejo 4s infinite;
 	width: 330px; /*medida global de la imagen*/
 	height: 215px;
 	object-fit: cover;	
- 
-	
-}
+ }
+ .galeria .imgUsuarios {
+    width: auto; /*medida global de la imagen*/
+	height: 215px;
+	object-fit: contain;
+	margin: 3px;
+}	
+
 /*ESTILOS AFTER PARA PROTEGER IMAGEN*/
 
 
@@ -374,6 +379,11 @@ animation: flashreflejo 4s infinite;
 	    object-fit: cover;
 	    box-shadow: rgba(167, 167, 167, 0.5) 3px 3px 6px;
 	}
+	.galeria .imgUsuarios {
+		width: auto; /*medida global de la imagen*/
+	    height: 98px;
+	    object-fit: contain;
+	}
 	.new {
 	    width: 145px; /*medida global de la imagen*/
 	    height: 98px;
@@ -387,6 +397,11 @@ animation: flashreflejo 4s infinite;
 	    object-fit: cover;
 	    box-shadow: rgba(167, 167, 167, 0.5) 3px 3px 6px;
 	    border-radius: 15px;
+	}
+	.galeria .imgUsuarios {
+		width: auto; /*medida global de la imagen*/
+	    height: 196px;
+	    object-fit: contain;
 	}
 	.new {
 	    width: 295px; /*medida global de la imagen*/
@@ -424,6 +439,7 @@ animation: flashreflejo 4s infinite;
 	object-fit: cover;
 
 }
+
 
 /*Estilos para proteger imagenes verticales*/
 .newvertical {
@@ -473,7 +489,7 @@ animation: flashreflejo 4s infinite;
 	.galeriaV {
 		width:100%;
 	    border-top: none;
-
+    
 	}
 }
 @media (max-width:768px){
@@ -482,6 +498,7 @@ animation: flashreflejo 4s infinite;
 	    height: 198px;
 	    object-fit: cover;
 	}
+	
 }   @media (max-width:768px) {
 	.newvertical {
 		width: 150px; /*medida global de la imagen*/
@@ -494,12 +511,13 @@ animation: flashreflejo 4s infinite;
 	     width: 200px; /*medida global de la imagen*/
 	    height: 300px;
 	}
-}   @media (min-width:426px) and (max-width:768px)  {
+	
 	.newvertical {
 		 width: 200px; /*medida global de la imagen*/
 	    height: 300px;
 	}
 }
+
 
 /*estilos lightBox*/
 /*estilos lightBox*/
@@ -516,7 +534,7 @@ animation: flashreflejo 4s infinite;
 	}
 }
 #contenedorlight, #lightInfantil, #lightFlores, #lightAdulto, #lightBoda,
-#lightAnimales, #lightComunion, #lightPrequinces, #lightQuinces
+#lightAnimales, #lightComunion, #lightPrequinces, #lightQuinces, #lightusuario1
 {
     display: none;
     position: fixed;
@@ -629,3 +647,14 @@ animation: flashreflejo 4s infinite;
 	.go{right: 	2%}
 	
 }
+/*seccion para el contenido de las galerias de usuarios*/
+/*Aquí van los id de los menus y de la seccion principal*/
+#menu2Alejandra, #menu1Alejandra, #AlejandraCastano {
+    display: none;
+}
+#menu2Alejandra, #menu1Alejandra {
+	background: rgba(255,150,0, 0.3);
+	color: #fff;
+	font-weight: bold;
+}
+/*seccion para el contenido de las galerias de usuarios*/
