@@ -42,6 +42,7 @@ h4 {
 		width:10%;
 	}
 }
+
 .menuGaleriasAfter {
     background: rgba(0,0,0,0.6); 
 	position: absolute;
@@ -167,6 +168,7 @@ animation: flashreflejo 4s infinite;
 	width:100%;
 	z-index:3;
 	background:linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.8), #000,  #000,  #000,  #000,  #000);
+	background: #000;
 }
 .menuMovil2 {
 	height: 0%;
@@ -178,7 +180,7 @@ animation: flashreflejo 4s infinite;
 	align-items: center;
 	width:100%;
 	z-index:3;
-	bottom:75px;
+	bottom:59px;
 	overflow-y: hidden;
 	background: rgba(0,0,0,.9);
 	transition: 1s;
@@ -187,16 +189,20 @@ animation: flashreflejo 4s infinite;
 	border: none;
 	background: none;
 	width:100%;
-	padding: 15px 5px 15px 5px;
+	padding: 12px 5px 5px 5px;
 	color: #d1d1d1; 
 	font-family:FreeMono, monospace;
-	font-size: 14px;
+	font-size: 12px;
 	border-bottom: 1px solid #151515;
+	filter: grayscale(100%);
+}
+.botonesMovil:hover {
+	filter: grayscale(0);
+	border: none;
 }
 .cerrarBotonesMovil {
 	padding: 0;
 	color: #a1a1a1;
-	text-shadow: 0px 5px 1px #101010;
 	border-bottom: none;
 }
 
@@ -220,8 +226,7 @@ animation: flashreflejo 4s infinite;
 /*parrafos*/
     .contenido {
 	padding: 100px 0px 50px 0px;
-	width:80%;
-	font-style: italic;
+	width:80%;	
 	margin: 10px auto;
 	
 	color: #fff;
@@ -237,9 +242,9 @@ animation: flashreflejo 4s infinite;
     .frase {
 	color: #fff;
 	float:left; 
-	font-family:var(--main-font-family);
 	position: relative;
-	font-size: 22px;
+	font-style: italic;
+	font-size: 17px;
 }  
 @media (max-width:768px) {
 	.frase {
@@ -282,7 +287,7 @@ animation: flashreflejo 4s infinite;
 	
 /*generales de todas las galerias*/
 .galerias {
-	width: 85%;
+	width: 75%;
 	margin: auto;
 	padding:0px 0px 0px 0px;   
 }
@@ -303,44 +308,45 @@ animation: flashreflejo 4s infinite;
 		}
 	}
 
-.galeria {
-	width: 80%;
+.galeria, .galeriaUser {
+	width: 100%;
 	margin: auto;
 	list-style: none;
-	box-sizing: border-box;
-	border-top: 1px solid #434343;
-	
+	box-sizing: border-box;	
 	display: flex; /*para ajustar en bloque*/
 	flex-wrap: wrap; /*para que se acomoden en tamaños reducidos*/
-	justify-content: space-around;
 	
 }
-
-.galeria li {
+.galeria {justify-content: space-around}
+.galeriaUser {justify-content: space-around}
+.galeria li, .galeriaUser li{
 	margin-top: 15px;
 }
 .galeria img {
-	width: 330px; /*medida global de la imagen*/
-	height: 215px;
+	width: 360px; /*medida global de la imagen*/
+	height: 240px;
 	object-fit: cover;	
  }
- .galeria .imgUsuarios {
+.galeriaUser .imgUsuarios {
     width: auto; /*medida global de la imagen*/
 	height: 215px;
 	object-fit: contain;
-	margin: 3px;
+	margin: 4px;
 }	
 
 /*ESTILOS AFTER PARA PROTEGER IMAGEN*/
 
 
 .new {
-	width: 330px;
-    height: 215px;
+	width: 360px;
+    height: 240px;
 	position:absolute;
 	transform:translate(0%, -102%);
-	border-radius: 15px;
+	transition: 0.5s;
 	
+}
+.new:hover {
+	background: rgba(0, 0, 0,  0.3);
 }
 .new img {
 	display:none;
@@ -350,14 +356,9 @@ animation: flashreflejo 4s infinite;
 	margin-left:85%;
 	
 }
-@media (min-width:1000px){
-	.new:hover img {
-	 display: block;
-    }
-}
+
 @media (max-width:424px){
 	.new img:nth-child(1),.new img:nth-child(2) {
-	 display: block;
 	 width:22px; 
 	 height:22px; 
 	 
@@ -379,7 +380,7 @@ animation: flashreflejo 4s infinite;
 	    object-fit: cover;
 	    box-shadow: rgba(167, 167, 167, 0.5) 3px 3px 6px;
 	}
-	.galeria .imgUsuarios {
+	.galeriaUser .imgUsuarios {
 		width: auto; /*medida global de la imagen*/
 	    height: 98px;
 	    object-fit: contain;
@@ -398,7 +399,7 @@ animation: flashreflejo 4s infinite;
 	    box-shadow: rgba(167, 167, 167, 0.5) 3px 3px 6px;
 	    border-radius: 15px;
 	}
-	.galeria .imgUsuarios {
+	.galeriaUser .imgUsuarios {
 		width: auto; /*medida global de la imagen*/
 	    height: 196px;
 	    object-fit: contain;
@@ -415,12 +416,10 @@ animation: flashreflejo 4s infinite;
 
 
 .galeriaV {
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	list-style: none;
-	box-sizing: border-box;
-	border-top: 1px solid #434343;
-	
+	box-sizing: border-box;	
 		
     display: flex; /*para ajustar en bloque*/
 	flex-wrap: wrap; /*para que se acomoden en tamaños reducidos*/
@@ -443,12 +442,15 @@ animation: flashreflejo 4s infinite;
 
 /*Estilos para proteger imagenes verticales*/
 .newvertical {
-    height: 345px;
+    height: 350px;
 	width: 245px;
 	position:absolute;
-	transform:translate(0%, -102%);
-	border-radius: 15px;
+	transform:translate(4%, -104%);
+	transition: 0.5s;
 	
+}
+.newvertical:hover {
+	background: rgba(0, 0, 0,  0.3);
 }
 .newvertical img {
 	display:none;
@@ -463,15 +465,9 @@ animation: flashreflejo 4s infinite;
 .new img:nth-child(1):hover, .new img:nth-child(2):hover, .new img:nth-child(3):hover{
 	width:35px;
 }
-@media (min-width:1000px){
-	.newvertical:hover img {
-	 display: block;
-	 
-    }
-}
+
 @media (max-width:424px){
 	.newvertical img:nth-child(1),.newvertical img:nth-child(2) {
-	 display: block;
 	 width:22px; 
 	height:22px; 
 	 
@@ -534,7 +530,7 @@ animation: flashreflejo 4s infinite;
 	}
 }
 #contenedorlight, #lightInfantil, #lightFlores, #lightAdulto, #lightBoda,
-#lightAnimales, #lightComunion, #lightPrequinces, #lightQuinces, #lightusuario1
+#lightAnimales, #lightComunion, #lightPrequinces, #lightQuinces, #lightusuario1, #lightPaisajes
 {
     display: none;
     position: fixed;
@@ -599,7 +595,7 @@ animation: flashreflejo 4s infinite;
 	font-size:var(--main-font-size);
 	font-family:var(--main-font-family);
 	padding: 2px;
-	background: rgba(0,0,0,0.9);
+	background: none;
 	border: none;
 }
 .cerrarLight {
@@ -646,6 +642,47 @@ animation: flashreflejo 4s infinite;
    	.back{left: 2% }
 	.go{right: 	2%}
 	
+}
+.navLight {
+    position:absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	background: rgba(0, 0, 0, 0.1);
+}
+.navLight ul {
+	background: rgba(0, 0, 0, 1	);
+	padding: 0px 20px 0px 20px;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+.navLight ul li {
+    display: inline-block;
+	font-size:18px;
+	color: #505050;
+	background: #000;
+	padding: 2px;
+}
+.navLight ul li i {
+	padding: 10px 10px 10px 10px;
+	
+}
+.navLight ul li:hover {
+	color: #a1a1a1;
+}
+.playplay {
+	transform: scale(0.75);
+	filter: grayscale(100%);
+}
+.barrausuario {
+	position:absolute; 
+	background: #505050; 
+	bottom: 0; 
+	width: 1px; 
+	height: 5px;
 }
 /*seccion para el contenido de las galerias de usuarios*/
 /*Aquí van los id de los menus y de la seccion principal*/

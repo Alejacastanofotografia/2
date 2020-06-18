@@ -16,8 +16,7 @@ function cambiarVentana(evt, cityName) {
   
   document.getElementById("goHome").style.display = 'none';
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active2";
-  camara.play();
+  evt.currentTarget.className += " active2"; 
 }
 
 // Get the element with id="defaultOpen" and click on it
@@ -32,7 +31,7 @@ function cambiarVentana2(evt, cityName) {
   tablinks = document.getElementsByClassName("tablinks2");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
-	
+
   }
   
   document.getElementById(cityName).style.display = "block";
@@ -52,12 +51,10 @@ function cambiarVentana3(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablinks3");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace(" active3", "");
   }
-  
-  document.getElementById("goHome").style.display = 'block';
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.className += " active3";
   
    document.querySelector('#Retratosmov').style.height = '0%';
 	document.querySelector('#Retratosmov').style.opacity = '0';
@@ -99,58 +96,60 @@ function mostrarUl3(){
 }
 /*navegar por los books*/
 /*navegar por los books*/
-function mostrarSeccionBook(){
-    document.getElementById("seccionBooks").style.display='block';
-	document.getElementById("comumnionBook").style.display='block';
-    document.getElementById("InfantilBook").style.display='none';
-	document.getElementById("previsualizacionBooks").style.display='none';
-	document.getElementById("left").style.display='none';
-    document.getElementById("right").style.display='block';
-    document.getElementById("flechasSwitch2").style.visibility='visible';
-    document.getElementById("flechasSwitch").style.visibility='hidden';
-	document.getElementById("avisoAPB").style.display='none';
+document.getElementById('dim1').click();
+function bookComunion(evt){
+    
+	document.getElementById('libroInfantil').style.display = 'none'; 
+    document.getElementById('libroComunion').style.display = 'flex'; 
 	
-}
-function mostrarSeccionBookinf(){
-    document.getElementById("seccionBooks").style.display='block';
-	document.getElementById("InfantilBook").style.display='block';
-    document.getElementById("comumnionBook").style.display='none';
-    document.getElementById("previsualizacionBooks").style.display='none';
-	document.getElementById("right").style.display='none';
-    document.getElementById("left").style.display='block';
-    document.getElementById("flechasSwitch").style.visibility='visible';
-	document.getElementById("flechasSwitch2").style.visibility='hidden';
-	document.getElementById("avisoAPB").style.display='none';
+	tablinks = document.getElementsByClassName("activemedidas");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" activeBook", "");
 	
+  }
+	evt.currentTarget.className += " activeBook"; 
+	
+	var textos3 = document.getElementsByClassName('containerh');
+	var i;
+	for(i = 0; i < textos3.length; i++){
+		textos3[i].classList.remove('containerhnuevo');
+	}
 }
-function mostrarSeccionBookcomu(){
-    document.getElementById("seccionBooks").style.display='block';
-	document.getElementById("comumnionBook").style.display='block';
-    document.getElementById("InfantilBook").style.display='none';
-	document.getElementById("previsualizacionBooks").style.display='none';
-	document.getElementById("left").style.display='none';
-    document.getElementById("right").style.display='block';
-    document.getElementById("flechasSwitch2").style.visibility='visible';
-    document.getElementById("flechasSwitch").style.visibility='hidden';
-	document.getElementById("avisoAPB").style.display='none';
-}
+function bookInfantil(evt){
+    document.getElementById('libroInfantil').style.display = 'flex';
+    document.getElementById('libroComunion').style.display = 'none';
 
-
-function irComunion(){
-    document.getElementById("comumnionBook").style.display='block';
-    document.getElementById("InfantilBook").style.display='none';
-    document.getElementById("left").style.display='none';
-    document.getElementById("right").style.display='block';
-    document.getElementById("flechasSwitch2").style.visibility='visible';
-    document.getElementById("flechasSwitch").style.visibility='hidden';
+    tablinks = document.getElementsByClassName("activemedidas");
+     for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" activeBook", "");
+	
+  }	
+	evt.currentTarget.className += " activeBook"; 
+	
+	var textos3 = document.getElementsByClassName('containerh');
+	var i;
+	for(i = 0; i < textos3.length; i++){
+		textos3[i].classList.remove('containerhnuevo');
+	}
 }
-function irQuinces(){
-    document.getElementById("InfantilBook").style.display='block';
-    document.getElementById("comumnionBook").style.display='none';
-    document.getElementById("right").style.display='none';
-    document.getElementById("left").style.display='block';
-    document.getElementById("flechasSwitch").style.visibility='visible';
-	document.getElementById("flechasSwitch2").style.visibility='hidden';
+function bookInfantilDimensiones(evt){
+    document.getElementById('libroInfantil').style.display = 'flex'; 
+    document.getElementById('libroComunion').style.display = 'none'; 
+   
+	
+	tablinks = document.getElementsByClassName("activemedidas");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" activeBook", "");
+	
+  }
+	evt.currentTarget.className += " activeBook"; 
+
+	var textos3 = document.getElementsByClassName('containerh');
+	var i;
+	for(i = 0; i < textos3.length; i++){
+		textos3[i].classList.add ('containerhnuevo');
+	}
+	
 }
 /*navegar por los books*/
 /*navegar por los books*/
@@ -216,26 +215,6 @@ function cambiarTema(){
 	document.querySelector('#perro').style.background = 'linear-gradient(#fff,rgba(255,255,255, 0.7))';
 	document.querySelector('#h1').style.color = '#c5c5c5';
 	
-	 
-	
-	/*
-	function myFunction() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-
-function myFunction() {
-   var element = document.querySelector('#dark'); id es el elemento al que se aplicara
-   element.classList.toggle("dark-mode");
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-	*/	
-	
-	
 	var a, b, c, d, e, f, g, textos;
 	var i;
 	
@@ -247,57 +226,29 @@ function myFunction() {
 	.container360text, .containersobremitext, .containersContactotext
 	
 	*/
-	titulos = document.getElementsByClassName('h360');
+	titulos = document.getElementsByClassName('titulosall');
 	var i;
 	for(i = 0; i < titulos.length; i++){
 		titulos[i].classList.add ("vintageH");
 	}
-	titulos1 = document.getElementsByClassName('h3sobremi');
-	var i;
-	for(i = 0; i < titulos1.length; i++){
-		titulos1[i].classList.add ("vintageH");
-	}
-	titulos2 = document.getElementsByClassName('h3Contacto');
-	var i;
-	for(i = 0; i < titulos2.length; i++){
-		titulos2[i].classList.add ("vintageH");
-	}
-	titulos3 = document.getElementsByClassName('h3Servicios');
-	var i;
-	for(i = 0; i < titulos3.length; i++){
-		titulos3[i].classList.add ("vintageH");
-	}
 	
-	textos = document.getElementsByClassName('p360');
+	textos = document.getElementsByClassName('parrafosAll');
 	var i;
 	for(i = 0; i < textos.length; i++){
 		textos[i].classList.add ("vintageP");
 	}
-	textos1 = document.getElementsByClassName('pSobremi');
-	var i;
-	for(i = 0; i < textos1.length; i++){
-		textos1[i].classList.add ("vintageP");
-	}
-	textos2 = document.getElementsByClassName('pContacto');
+	textos2 = document.getElementsByClassName('textocontacto');
 	var i;
 	for(i = 0; i < textos2.length; i++){
 		textos2[i].classList.add ("vintageP");
 	}
-	textos5 = document.getElementsByClassName('pServicios');
-	var i;
-	for(i = 0; i < textos5.length; i++){
-		textos5[i].classList.add ("vintageP");
-	}
-	textos4 = document.getElementsByClassName('textocontacto');
-	var i;
-	for(i = 0; i < textos4.length; i++){
-		textos4[i].classList.add ("vintageP");
-	}
+	
 	textos3 = document.getElementsByClassName('Enlaces');
 	var i;
 	for(i = 0; i < textos3.length; i++){
-		textos3[i].classList.add ('vintagebotonContacto');
+		textos3[i].classList.add ('EnlacesActive');
 	}
+	
 	
 	
 	fondos = document.getElementsByClassName('container360text');
@@ -320,7 +271,16 @@ function myFunction() {
 	for(i = 0; i < fondos3.length; i++){
 		fondos3[i].classList.add ("vintageBackground");
 	}
+	fondos4 = document.getElementsByClassName('tituloParrafo');
+	var i;
+	for(i = 0; i < fondos4.length; i++){
+		fondos4[i].classList.add("vintageBackground");
+	}
 	
+	document.getElementById('login').style.background = 'rgba(255, 255, 255, 0.9)';
+		
+	document.getElementById('libroInfantil').style.background = 'rgba(255, 255, 255, 0.9)';
+	document.getElementById('libroComunion').style.background = 'rgba(255, 255, 255, 0.9)';
 	// fin estilos parrafos titulos y fondos generales
 	
 	
@@ -390,7 +350,7 @@ function defaultTema(){
     document.body.style.background = '#000';	
 	document.querySelector('footer').style.background = 'none';
 	document.querySelector('footer').style.color = '#909090';
-	document.querySelector('#perro').style.background = 'linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8), #000,  #000,  #000,  #000,  #000)';
+	document.querySelector('#perro').style.background = 'linear-gradient(to top, rgba(0,0,0, 0.6), rgba(0,0,0, 0.6), #000,  #000,  #000,  #000,  #000)';
 	document.querySelector('#h1').style.color = '#a5a5a5';
 	
     var a, b, c, d, e, f, g, h;
@@ -415,56 +375,26 @@ function defaultTema(){
 	.container360text, .containersobremitext, .containersContactotext
 	
 	*/
-	titulos = document.getElementsByClassName('h360');
+	titulos = document.getElementsByClassName('titulosall');
 	var i;
 	for(i = 0; i < titulos.length; i++){
 		titulos[i].classList.remove("vintageH");
 	}
-	titulos1 = document.getElementsByClassName('h3sobremi');
-	var i;
-	for(i = 0; i < titulos1.length; i++){
-		titulos1[i].classList.remove("vintageH");
-	}
-	titulos2 = document.getElementsByClassName('h3Contacto');
-	var i;
-	for(i = 0; i < titulos2.length; i++){
-		titulos2[i].classList.remove("vintageH");
-	}
-	titulos3 = document.getElementsByClassName('h3Servicios');
-	var i;
-	for(i = 0; i < titulos3.length; i++){
-		titulos3[i].classList.remove("vintageH");
-	}
-	
-	textos = document.getElementsByClassName('p360');
+		
+	textos = document.getElementsByClassName('parrafosAll');
 	var i;
 	for(i = 0; i < textos.length; i++){
 		textos[i].classList.remove("vintageP");
 	}
-	textos1 = document.getElementsByClassName('pSobremi');
-	var i;
-	for(i = 0; i < textos1.length; i++){
-		textos1[i].classList.remove ("vintageP");
-	}
-	textos2 = document.getElementsByClassName('pContacto');
+	textos2 = document.getElementsByClassName('textocontacto');
 	var i;
 	for(i = 0; i < textos2.length; i++){
-		textos2[i].classList.remove ("vintageP");
+		textos2[i].classList.remove("vintageP");
 	}
-	textos5 = document.getElementsByClassName('pServicios');
-	var i;
-	for(i = 0; i < textos5.length; i++){
-		textos5[i].classList.remove ("vintageP");
-	}
-	textos4 = document.getElementsByClassName('textocontacto');
-	var i;
-	for(i = 0; i < textos4.length; i++){
-		textos4[i].classList.remove ("vintageP");
-	}
-	textos3 = document.getElementsByClassName('Enlaces');
+		textos3 = document.getElementsByClassName('Enlaces');
 	var i;
 	for(i = 0; i < textos3.length; i++){
-		textos3[i].classList.remove ("vintagebotonContacto");
+		textos3[i].classList.remove ('EnlacesActive');
 	}
 	
 	
@@ -488,9 +418,17 @@ function defaultTema(){
 	for(i = 0; i < fondos3.length; i++){
 		fondos3[i].classList.remove ("vintageBackground");
 	}
+	fondos4 = document.getElementsByClassName('tituloParrafo');
+	var i;
+	for(i = 0; i < fondos4.length; i++){
+		fondos4[i].classList.remove ("vintageBackground");
+	}
 	
+	document.getElementById('login').style.background = 'rgba(0, 0, 0, 0.9)';
+	document.getElementById('libroInfantil').style.background = 'rgba(0,0,0,0.9)';
+	document.getElementById('libroComunion').style.background = 'rgba(0,0,0,0.9)';
 	// fin estilos parrafos titulos y fondos generales
-	c = document.getElementsByClassName('pbook', );
+	c = document.getElementsByClassName('pbook');
 	var i;
 	for(i = 0; i < c.length; i++){
 	    c[i].style.color = '#c1c1c1';
@@ -511,7 +449,7 @@ function defaultTema(){
 	    f[i].style.color = '#d1d1d1';
 	}
 	/*menu galerias para movil*/
-	document.querySelector('.menuMovil1').style.background = 'linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.8), #000,  #000,  #000,  #000,  #000)';	
+	document.querySelector('.menuMovil1').style.background = '#000';	
 	
     g = document.getElementsByClassName('menuMovil2');
 	var i;
@@ -571,4 +509,185 @@ var documentoUsuario= document.getElementById('documento').value;
 }
 /*seccion login*/
 /*seccion login*/
+/*seccion lightbox*/
+//abrir y cerrar lightbox
+function abrirlight(abrirgaleria){
+    document.getElementById(abrirgaleria).style.display = 'block';}
+function cerrarlight(cerrargaleria){
+    document.getElementById(cerrargaleria).style.display = 'none';}
+/*seccion lightbox*/
+/*seccion lightbox*/
+var num = 1;
+function next(cambiar, numeroT, numerofoto, carpeta) {
+    num++;
+	var carpetafotos = document.getElementById(carpeta).value; 
+	var indexMain = document.getElementById(numeroT).value; 
+	if(num > indexMain) { //valor del ultimo elemento
+	    num = 1}
+		var fotos = document.getElementById(cambiar);
+		    fotos.src =carpetafotos+'/img'+num+'.jpg';
+			document.getElementById(numerofoto).innerHTML= num ;
+	var numopaci = 60;
+	var opacidadFoto = setInterval(opacidad, 10);
+	function opacidad(){
+	    if(numopaci == 100){
+		    clearInterval(opacidadFoto);
+		}
+		else{
+		   numopaci++;
+		   document.getElementById(cambiar).style.opacity =  numopaci+'%';
+		}
+	}
+}
+//**************************************//
+function prev(cambiar, numeroT, numerofoto, carpeta){
+    num--;
+	var carpetafotos = document.getElementById(carpeta).value; 
+	var indexMain = document.getElementById(numeroT).value; 
+	if(num < 1) { //valor del ultimo elemento
+	    num = indexMain}
+		var fotos = document.getElementById(cambiar);
+		    fotos.src = carpetafotos+'/img'+num+'.jpg';
+			document.getElementById(numerofoto).innerHTML= num;
+    var numopaci = 60;
+	var opacidadFoto = setInterval(opacidad, 10);
+	function opacidad(){
+	    if(numopaci == 100){
+		    clearInterval(opacidadFoto);
+			document.getElementById(cambiar).style.opacity =  numopaci+'%'
+		}
+		else{
+		   numopaci++;
+		   document.getElementById(cambiar).style.opacity =  numopaci+'%';
+		}
+	}
+}
+
+//cambiar foto automaticamente
+var automatico; //para controlar que las imagenes cambien automaticamente.
+var barraestado; // para controlar la barra de estado.
+function playfotos(totalfotos, cambiar){
+   var total= document.getElementById(totalfotos).value;
+   var num = 0;
+   var activecambiar;
+    
+   automatico = setInterval(cambiarSola, 2500);
+   
+   activecambiar =  document.getElementsByClassName('cambiarsola');
+   for(var i = 0; i < activecambiar.length; i++){
+       activecambiar[i].classList.add("playplay");
+   }
+   var activecambiar2 =  document.getElementsByClassName('cambiarsola2');
+   for(var i = 0; i < activecambiar2.length; i++){
+       activecambiar2[i].classList.remove("playplay");
+   }
+   function cambiarSola(){
+       if( num == total){
+	      clearInterval(automatico);
+		  activecambiar =  document.getElementsByClassName('cambiarsola2');
+		      for(var i = 0; i < activecambiar.length; i++){
+				 activecambiar[i].click(); 
+			  }
+		  var cerrarautomatico = document.getElementsByClassName('cerrarLight');
+		      for(var i = 0; i < cerrarautomatico.length; i++){
+				 cerrarautomatico[i].click(); 
+			  }
+              for(var i = 0; i < activecambiar.length; i++){
+                 activecambiar[i].classList.remove("playplay");
+              }
+		  var porcentajedebarra =  document.getElementsByClassName('barrausuario');
+              for(var i = 0; i < porcentajedebarra.length; i++){
+                 porcentajedebarra[i].style.width = '0%'; 
+   			}	
+	   }
+	   else{
+	   num++;
+	   document.getElementById(cambiar).click();
+	   }
+   }
+/*  funcion para completar la barra de estado de 0 a 100 */ 
+   var porcentaje = total * 2500;
+   var porcentaje2 =  porcentaje / 1000; //para que le tiempo de intervalo sea menor y la barra avance con mas normalidad
+   var numPorcentaje = 0; 
+   barraestado = setInterval(estadodelabarra, porcentaje2);
+   
+   function estadodelabarra(){
+       if(numPorcentaje == 100){
+		   clearInterval(automatico); 
+	    }
+	   else{
+	        numPorcentaje = numPorcentaje+ 0.1;
+	       
+			var porcentajedebarra =  document.getElementsByClassName('barrausuario');
+            for(var i = 0; i < porcentajedebarra.length; i++){
+            porcentajedebarra[i].style.width = numPorcentaje+'%'; 
+            }
+	    }
+   }
+ /*    */ 
+   
+   
+  
+}
+function Stopfotos(){  
+    clearInterval(barraestado); 
+    clearInterval(automatico);
+	var activecambiar =  document.getElementsByClassName('cambiarsola');
+   for(var i = 0; i < activecambiar.length; i++){
+       activecambiar[i].classList.remove("playplay");
+   }
+   var activecambiar2 =  document.getElementsByClassName('cambiarsola2');
+   for(var i = 0; i < activecambiar2.length; i++){
+       activecambiar2[i].classList.add("playplay");
+   }
+   var defatulbarra =  document.getElementsByClassName('barrausuario');
+   for(var i = 0; i < defatulbarra.length; i++){
+       defatulbarra[i].style.width = '1px';
+   }
+  
+}
+
+/*seccion lightbox*/
+/*seccion lightbox*/
+/*Funcion para Slider*/
+/*Funcion para Slider*/
+function myFunction() {
+  var setSlider = setTimeout(sliderAuto, 2000);
+}
+var imagenSlider;
+function opacidadSlider(){
+   imagenSlider = document.getElementById('ImagenSlider');
+   var nummopa = 40;
+   var animacionOpacidad = setInterval(OpacidadSlider2, 7);
+	function OpacidadSlider2(){
+	    if(nummopa == 100){
+		    clearInterval(OpacidadSlider2);
+		}
+		else{
+		    nummopa++;
+			imagenSlider.style.opacity = nummopa+'%';			
+		}
+	}
+	
+}
+function sliderAuto(){
+    var numm = 0;
+	var animacion = setInterval(SliderAutomatico, 5000);
+	imagenSlider = document.getElementById('ImagenSlider');
+	function SliderAutomatico(){
+	    if(numm == 8){
+		    numm = 0;
+		}
+		else{
+		    numm++;
+			imagenSlider.src = 'Slider/img'+numm+'.jpg';
+			opacidadSlider();
+			
+		}
+	}
+}
+myFunction();
+/*Funcion para Slider*/
+/*Funcion para Slider*/
+
 
