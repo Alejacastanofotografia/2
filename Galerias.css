@@ -227,16 +227,13 @@ animation: flashreflejo 4s infinite;
     .contenido {
 	padding: 100px 0px 50px 0px;
 	width:80%;	
-	margin: 10px auto;
-	
 	color: #fff;
 	z-index:4;
-  
-	    
+   
 }
 @media (max-width:768px) {
 	.contenido {
-		padding: 60px 0px 0px 0px;
+		padding: 80px 0px 0px 0px;
 	}
 }
     .frase {
