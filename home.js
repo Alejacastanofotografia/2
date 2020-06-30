@@ -573,11 +573,11 @@ function playfotos(totalfotos, cambiar){
     
    automatico = setInterval(cambiarSola, 2500);
    
-   activecambiar =  document.getElementsByClassName('cambiarsola');
+   activecambiar =  document.getElementsByClassName('activeFotos');
    for(var i = 0; i < activecambiar.length; i++){
        activecambiar[i].classList.add("playplay");
    }
-   var activecambiar2 =  document.getElementsByClassName('cambiarsola2');
+   var activecambiar2 =  document.getElementsByClassName('activeFotos2');
    for(var i = 0; i < activecambiar2.length; i++){
        activecambiar2[i].classList.remove("playplay");
    }
@@ -632,11 +632,11 @@ function playfotos(totalfotos, cambiar){
 function Stopfotos(){  
     clearInterval(barraestado); 
     clearInterval(automatico);
-	var activecambiar =  document.getElementsByClassName('cambiarsola');
+	var activecambiar =  document.getElementsByClassName('activeFotos');
    for(var i = 0; i < activecambiar.length; i++){
        activecambiar[i].classList.remove("playplay");
    }
-   var activecambiar2 =  document.getElementsByClassName('cambiarsola2');
+   var activecambiar2 =  document.getElementsByClassName('activeFotos2');
    for(var i = 0; i < activecambiar2.length; i++){
        activecambiar2[i].classList.add("playplay");
    }
@@ -655,21 +655,7 @@ function myFunction() {
   var setSlider = setTimeout(sliderAuto, 2000);
 }
 var imagenSlider;
-function opacidadSlider(){
-   imagenSlider = document.getElementById('ImagenSlider');
-   var nummopa = 40;
-   var animacionOpacidad = setInterval(OpacidadSlider2, 7);
-	function OpacidadSlider2(){
-	    if(nummopa == 100){
-		    clearInterval(OpacidadSlider2);
-		}
-		else{
-		    nummopa++;
-			imagenSlider.style.opacity = nummopa+'%';			
-		}
-	}
-	
-}
+
 function sliderAuto(){
     var numm = 0;
 	var animacion = setInterval(SliderAutomatico, 5000);
@@ -681,7 +667,6 @@ function sliderAuto(){
 		else{
 		    numm++;
 			imagenSlider.src = 'Slider/img'+numm+'.jpg';
-			opacidadSlider();
 			
 		}
 	}
