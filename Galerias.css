@@ -130,26 +130,7 @@ h4 {
 	z-index: 15;
 	border: none;
 }
-
-/*
-animation: flashreflejo 4s infinite;
-	animation-delay: 0.5s;
-    @keyframes flashreflejo {
-    25% {
-		border-top: 0.5px solid rgba(255,255,255,0.6);
-	}
-	50% {
-		border-top: 0.5px solid rgba(255,255,255,0.2);
-	}
-	75% {
-		border-top: 0.5px solid rgba(255,255,255,0.2);
-	}
-	100% {
-		border-top: 0.5px solid rgba(255,255,255,0.2);
-	}
-}
-*/
-	 
+ 
    .menulateral ul li a:hover {
 		background: linear-gradient(to bottom right,rgba(1, 189, 255, 0.7), rgba(1, 189, 255, 0.3), #000);
 
@@ -318,13 +299,19 @@ animation: flashreflejo 4s infinite;
 .galeria {justify-content: space-around}
 .galeriaUser {justify-content: space-around}
 .galeria li, .galeriaUser li{
-	margin-top: 15px;
+	margin-top: 25px;
+	overflow: hidden;
 }
 .galeria img {
 	width: 360px; /*medida global de la imagen*/
 	height: 240px;
 	object-fit: cover;	
+	transition: 1s;
  }
+
+.galeria li:hover img{
+	transform: scale( 1.1);
+}
 .galeriaUser .imgUsuarios {
     width: auto; /*medida global de la imagen*/
 	height: 215px;
@@ -334,12 +321,17 @@ animation: flashreflejo 4s infinite;
 
 /*ESTILOS AFTER PARA PROTEGER IMAGEN*/
 
-
+.afterImg {
+	border: 5px solid #ff55ff;
+	z-index: 1;
+	background: rgba(0, 80, 0, 0.5);
+}
 .new {
 	width: 360px;
     height: 240px;
 	position:absolute;
-	transform:translate(0%, -102%);
+	padding: 2px 0;
+	transform:translate(0%, -100%);
 	transition: 0.5s;
 	
 }
@@ -352,9 +344,12 @@ animation: flashreflejo 4s infinite;
 	height:33px; 
 	margin-top:3%; 
 	margin-left:85%;
+	opacity: 0.3;
 	
 }
-
+.new:hover img:nth-child(1){
+	display:block;
+}
 @media (max-width:424px){
 	.new img:nth-child(1),.new img:nth-child(2) {
 	 width:22px; 
@@ -427,36 +422,46 @@ animation: flashreflejo 4s infinite;
 
 }
 .galeriaV li {
-	margin-top: 15px;
+	margin-top: 25px;
+	overflow: hidden;
 }
 .galeriaV img {
 	height: 350px; /*medida global de la imagen*/
 	width: 245px;
-	margin:10px;
 	object-fit: cover;
-
+    transition: 1s;
 }
-
+.galeriaV li:hover img{
+	transform: scale( 1.1);
+}	
 
 /*Estilos para proteger imagenes verticales*/
 .newvertical {
     height: 350px;
 	width: 245px;
 	position:absolute;
-	transform:translate(4%, -104%);
+	padding: 2px 0px;
+	transform:translate(0%, -100%);
 	transition: 0.5s;
 	
 }
 .newvertical:hover {
 	background: rgba(0, 0, 0,  0.3);
 }
-.newvertical img {
-	display:none;
+.newvertical img:nth-child(1) {
+	display: none;
 	width:33px; 
 	height:33px; 
 	margin-top:5%; 
 	margin-left:85%;
-	
+	opacity: 0.2;
+	transition: 0.5s;
+}
+.newvertical:hover img:nth-child(1){
+	display: block;	
+}
+.newvertical img:nth-child(2) {
+	display:none;
 	
 }
 .newvertical img:nth-child(1):hover, .newvertical img:nth-child(2):hover, .newvertical img:nth-child(3):hover,
