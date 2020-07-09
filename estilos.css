@@ -542,13 +542,17 @@ footer{
 	transition: 0.7s;
 	opacity: 1;
 }
+.positionMenu{  
+	opacity: 0;
+	height: 0;
+}
 @keyframes transladar {
 	from{transform: translateY(300px)}
 	to{transform: translateY(0)}
 }
 /*Estilos active para navegacion con Js*/
 .activeMain {
-	filter: sepia(80%) ;
+	filter: invert(10%);
 }
 #menuGalerias ul li.active {
 	background: rgba(255,255,255,0.3);
