@@ -90,7 +90,7 @@ header {
 	cursor: pointer;
 	
 }
-.items a, .items i{
+.items li a{
 	text-decoration: none;
 	color: var(--main-colorMenu);
 }
@@ -552,7 +552,7 @@ footer{
 }
 /*Estilos active para navegacion con Js*/
 .activeMain {
-	filter: invert(10%);
+	transform: scale(0.9);
 }
 #menuGalerias ul li.active {
 	background: rgba(255,255,255,0.3);
