@@ -184,7 +184,7 @@ function mostrarScroll(){
 	}
 	for(var i = 0; i < ContendedorHMenu.length; i++){
 		let alturaAnimado = ContendedorHMenu[i].offsetTop;
-		if(scrollTop > 700){
+		if(scrollTop > 1000){
 			ContendedorHMenu[i].classList.add("positionMenu");
 		}
 		else{
@@ -194,6 +194,17 @@ function mostrarScroll(){
 }
 
 window.addEventListener('scroll', mostrarScroll);
+function irArriba(){
+	scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+	if(scrollTop > 400){
+		document.querySelector('#irArriba').style.display = 'block';
+	}
+	else{
+		document.querySelector('#irArriba').style.display = 'none';		
+		document.querySelector('#irArriba').classList.add('positionBotonIrTop');		
+	}
+}
+window.addEventListener("scroll", irArriba);
 //navegacion por los books
 function bookComunion(evt){
     

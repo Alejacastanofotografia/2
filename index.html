@@ -36,7 +36,7 @@
 	        <div class="afterimgSlider"></div>
 	    </div>	
 		    <div class="contenedorSlider" >
-			    <div class="items" ><li class="tabs" onclick="navegacion(event, 'principal', 'Head'); window.scroll(10,800)"><i style='font-size:18px; padding:5px' class='fas'>&#xf015;</i></li></div>
+			    <div class="items" ><li class="tabs" onclick="navegacion(event, 'principal', 'Head'); window.scroll(10,800)"><a class='fas'>&#xf015;</a></li></div>
 		        <div class="items"  >
 			        <li class="tabs" onclick="navegacion(event, 'book', 'noHead'); window.scroll(0,0)"><a>Books</a></li>  
 		     	</div>
@@ -56,14 +56,18 @@
 		            <span>a</span>
 		        </h1>
 		        <div class="items" >
-			        <li class="tabs"onclick="navegacion(event, 'principal', 'Head')"><a href="#sobreMi">Sobre Mí</a></li>  
+			        <li class="tabs"onclick="navegacion(event, 'principal', 'Head')"><a href="#sobreMi" id="linkSobreMi">Sobre Mí</a></li>  
 			    </div>
 		        <div class="items" >
 			        <li class="tabs"onclick="navegacion(event, 'principal', 'Head')"><a>Contacto</a></li>  
 			    </div>
-			    <div class="items tabs"><li class="material-icons">&#xe5d2;</li></div>
+			    <div class="items" ><li class="material-icons tabs"><a>&#xe5d2;</a></li></div>
 		    </div>
     </header>
+	<div id="irArriba" onclick="window.scroll(0, 0)">
+        <i class='fas'>&#xf106;</i>
+	</div>	
+
 	<section class="ventanas" id="principal">
 	<div class="fraseHome">
 	    <p class="frasehomeP">
