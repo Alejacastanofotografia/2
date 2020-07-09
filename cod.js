@@ -194,7 +194,6 @@ function mostrarScroll(){
 }
 
 window.addEventListener('scroll', mostrarScroll);
-
 //navegacion por los books
 function bookComunion(evt){
     
