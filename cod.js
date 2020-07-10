@@ -198,10 +198,13 @@ function irArriba(){
 	scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 	if(scrollTop > 400){
 		document.querySelector('#irArriba').style.display = 'block';
+		
+		if(scrollTop > 1)document.querySelector('#irAbajo').style.display = 'none';
 	}
 	else{
 		document.querySelector('#irArriba').style.display = 'none';		
-		document.querySelector('#irArriba').classList.add('positionBotonIrTop');		
+		document.querySelector('#irArriba').classList.add('positionBotonIrTop');
+		document.querySelector('#irAbajo').style.display = 'block';		
 	}
 }
 window.addEventListener("scroll", irArriba);

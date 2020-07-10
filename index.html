@@ -38,10 +38,10 @@
 		    <div class="contenedorSlider" >
 			    <div class="items" ><li class="tabs" onclick="navegacion(event, 'principal', 'Head'); window.scroll(10,800)"><a class='fas'>&#xf015;</a></li></div>
 		        <div class="items"  >
-			        <li class="tabs" onclick="navegacion(event, 'book', 'noHead'); window.scroll(0,0)"><a>Books</a></li>  
+			        <li class="tabs" onclick="navegacion(event, 'book', 'noHead'); window.scroll(0,0)"><a href="#">Books</a></li>  
 		     	</div>
 		        <div class="items" >
-			        <li class="tabs" onclick="navegacion(event, 'Galerias', 'noHead'); window.scroll(0,0); scrollMenusInternos()"><a>Sesiones</a></li>  
+			        <li class="tabs" onclick="navegacion(event, 'Galerias', 'noHead'); window.scroll(0,0); scrollMenusInternos()"><a href="#">Sesiones</a></li>  
 			    </div>
 		        <h1 class="h1Main tabs" id="defaultClick" onclick="navegacion(event, 'principal', 'Head'); window.scroll(0,0)">Aleja Castaño<br>
 		            <span>F</span>
@@ -59,14 +59,19 @@
 			        <li class="tabs"onclick="navegacion(event, 'principal', 'Head')"><a href="#sobreMi" id="linkSobreMi">Sobre Mí</a></li>  
 			    </div>
 		        <div class="items" >
-			        <li class="tabs"onclick="navegacion(event, 'principal', 'Head')"><a>Contacto</a></li>  
+			        <li class="tabs"onclick="navegacion(event, 'principal', 'Head')"><a href="#">Contacto</a></li>  
 			    </div>
 			    <div class="items" ><li class="material-icons tabs"><a>&#xe5d2;</a></li></div>
 		    </div>
 		
     </header>
-	<div id="irArriba" onclick="window.scroll(0, 0)">
+	<div id="irArriba" class="irArriba" onclick="window.scroll(0, 0)">
         <i class='fas'>&#xf106;</i>
+	</div>	
+	
+	
+	<div id="irAbajo" class="irAbajo" onclick="window.scroll(0, 600)">
+        <i class='fas'>&#xf107;</i>
 	</div>	
 
 	<section class="ventanas" id="principal">
@@ -170,6 +175,7 @@
 
 
 	<div class="booksContainer"> 
+    <p>.</p>	
     <div id="libroComunion" >	   
 	   <div class="container" >
 		    <div class="cover">
