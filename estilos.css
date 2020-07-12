@@ -25,6 +25,16 @@
 	    --main-font-family: 'Della Respira';
 	}
 }
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollvar-track{
+	background: #101010;
+}
+::-webkit-scrollbar-thumb {
+	background: #303030;
+	border-radius: 10px;
+}
 body {
 	background: var(--main-backgroundMain);
 }
