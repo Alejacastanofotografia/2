@@ -9,7 +9,7 @@
 	--main-colorMenu: #bbb;
 	--main-border-radius: 1rem;
 	--main-font-family: 'Della Respira';
-	--main-font-sizeParrafos: 1.5rem;
+	--main-font-sizeParrafos: 1.3rem;
 	--main-font-sizeTitulos: 1.8rem;
 }
 @media(max-width: 850px){
@@ -19,6 +19,7 @@
 }
 @media(max-width:600px){
 	:root{
+	    --main-font-sizeParrafos: 0.9rem;
 		--main-backgroundMain: #fafafa;
 	    --main-color: #202020;
 	    --main-colorMenu: #a1a1a1;
@@ -27,6 +28,7 @@
 }
 ::-webkit-scrollbar {
 	width: 10px;
+	height: 1px;
 }
 ::-webkit-scrollvar-track{
 	background: #101010;
@@ -34,6 +36,7 @@
 ::-webkit-scrollbar-thumb {
 	background: #303030;
 	border-radius: 10px;
+	width: 10px;
 }
 body {
 	background: var(--main-backgroundMain);
@@ -266,6 +269,65 @@ header {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+/* Contacto */
+.contacto {
+	margin: 4rem 0 0 0;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	transition: 0.8s;
+}
+.contacto img{
+	object-fit: cover;
+	width: 100%;
+}
+.contactoItem form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 4rem;
+	height: 100%;
+}
+.contactoItem form input, .contactoItem form textarea{
+	padding: 1rem;
+	border: none;
+	outline: none;
+	margin-top: 1rem;
+	border-radius: .3rem;
+	width: 100%;
+	font-size: var(--main-font-sizeParrafos);
+	font-family: var(--main-font-family);
+	background: #ccc;
+	color: #000;
+	text-align: center;
+	transition: .5s; 
+}
+.contactoItem form input:hover, .contactoItem form textarea:hover {
+	filter: sepia(100%) hue-rotate(90deg);
+}
+.contactoItem form input::placeholder{
+	text-align: center;
+	color: #101010;
+}
+.contactoItem form input:focus, .contactoItem form textarea:focus {
+	border: 3px solid #00aaff;
+}
+.botones {
+	background: #000;
+	color: #aaa;
+	border: 3px solid #151515;
+	padding: 1rem 2rem;
+	margin-top: 1rem;
+	border-radius: .3rem;
+	font-size: var(--main-font-sizeParrafos);
+	font-family: var(--main-font-family);
+	text-align: center;
+	transition: .5s; 
+}
+.botones:hover{
+	filter: sepia(100%) hue-rotate(90deg);
+	
 }
 .c360 {
 	margin: 4rem 0 0 0; 
@@ -526,6 +588,12 @@ footer{
 	}	.sobreMiItem:nth-child(2){
 		    grid-row: 1/2;
 	    }
+	.contacto {
+		grid-template-columns: 1fr;		
+	}
+    .contactoItem form input:hover, .contactoItem form textarea:hover {
+	    filter: none;
+    }
 }
 @media (max-width:800px){
 	.h1Main {
