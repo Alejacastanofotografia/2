@@ -277,9 +277,19 @@ header {
 	grid-template-columns: 60% 40%;
 	transition: 0.8s;
 }
-.contacto img{
+.contactoItem:nth-child(1){
+	overflow: hidden;
+	background: #000;
+}
+.contactoItem img{
 	object-fit: cover;
 	width: 100%;
+	animation: mover 30s infinite linear;
+}
+@keyframes mover{
+	0%{transform: scale(0.5)}
+	50%{transform: scale(1.3)}
+	100%{transform: scale(0.5)}
 }
 .contactoItem form{
 	display: flex;
