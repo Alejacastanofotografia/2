@@ -105,7 +105,6 @@ formulario.addEventListener('submit', function(evt){
 	
 });
 function nuevoVisitante(){
-	alert('Soy un nuevo visitante');
 	let fecha = new Date();
 	let width = screen.width;
 	let height = screen.height;
