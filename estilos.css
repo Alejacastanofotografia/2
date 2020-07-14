@@ -12,18 +12,18 @@
 	--main-font-sizeParrafos: 1.3rem;
 	--main-font-sizeTitulos: 1.8rem;
 }
-@media(max-width: 850px){
-	:root {
-	    --main-font-sizeParrafos: 1rem;
-    }
-}
 @media(max-width:600px){
 	:root{
-	    --main-font-sizeParrafos: 0.9rem;
 		--main-backgroundMain: #fafafa;
 	    --main-color: #202020;
 	    --main-colorMenu: #a1a1a1;
 	    --main-font-family: 'Della Respira';
+	}
+}
+
+@media(max-width:600px){
+	:root{
+	    --main-font-sizeParrafos: 1rem;
 	}
 }
 ::-webkit-scrollbar {
@@ -276,6 +276,7 @@ header {
 	display: grid;
 	grid-template-columns: 60% 40%;
 	transition: 0.8s;
+	cursor: pointer;
 }
 .contactoItem:nth-child(1){
 	overflow: hidden;
@@ -300,7 +301,7 @@ header {
 	height: 100%;
 }
 .contactoItem form input, .contactoItem form textarea{
-	padding: 1rem;
+	padding: .6rem;
 	border: none;
 	outline: none;
 	margin-top: 1rem;
@@ -308,13 +309,13 @@ header {
 	width: 100%;
 	font-size: var(--main-font-sizeParrafos);
 	font-family: var(--main-font-family);
-	background: #ccc;
+	background: #aaa;
 	color: #000;
 	text-align: center;
-	transition: .5s; 
+	transition: .2s; 
 }
 .contactoItem form input:hover, .contactoItem form textarea:hover {
-	filter: sepia(100%) hue-rotate(90deg);
+	transform: scale(1.02);
 }
 .contactoItem form input::placeholder{
 	text-align: center;
@@ -322,11 +323,13 @@ header {
 }
 .contactoItem form input:focus, .contactoItem form textarea:focus {
 	border: 3px solid #00aaff;
+	background: #fff;
 }
 .botones {
 	background: #000;
 	color: #aaa;
 	border: 3px solid #151515;
+	outline: none;
 	padding: 1rem 2rem;
 	margin-top: 1rem;
 	border-radius: .3rem;
@@ -339,6 +342,31 @@ header {
 	filter: sepia(100%) hue-rotate(90deg);
 	
 }
+#mensajesFormulario {
+	font-size: var(--main-font-sizeParrafos);
+	font-family: var(--main-font-family);
+	border-radius: .3rem;
+	color: #fff;
+}
+#mensajesFormularioGrave {
+	color: #ff0000;
+	font-size: 3rem;
+}
+#mensajeExitoso {
+	font-size: 2rem;
+	color: #00ff00;	
+}
+.error {
+	padding: .3rem;
+	background: #ff0000;
+}
+.EnvioExitoso{
+	padding: .5rem;
+	background: #00ff00;
+	color: #303030;
+	
+}
+/* contenido 360 */
 .c360 {
 	margin: 4rem 0 0 0; 
 	display: grid;

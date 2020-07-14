@@ -12,12 +12,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<!--librerias 360-->
-	<script src="three.min.js"></script>
-	<script src="photo-sphere-viewer.min.js"></script>
-	<script src="sphoords.js"></script>
+	<script src="scripts/three.min.js"></script>
+	<script src="scripts/photo-sphere-viewer.min.js"></script>
+	<script src="scripts/sphoords.js"></script>
 	
 </head>
-<body>
+<body onload="nuevoVisitante()">
     <header id="header">
 	    <div class="slider" id="imgSlider" >
 	        <div class="imgagenesSlider">
@@ -144,15 +144,21 @@
 		    <img src="Imagenes/Fondos/img7.jpg">
 	    </div>
 	    <div class="contactoItem">
-		    <form>
+		    <form id="formularioContacto">
 		        <h3 class="titulos">Contacto</h3>
 			    <p class="parrafos">
 				    Puedes contactarme a través de mis redes sociales o ingresar tus datos en el siguiente formulario.
 				</p>
-				<input type="text" placeholder="Nombre">
-				<input type="text" placeholder="Teléfono">
-				<textarea placeholder="Comentarios"></textarea>
-				    <button class="botones">Envíar</button>
+				<input type="text" placeholder="Nombre" name="name" id="name">
+				<input type="text" placeholder="Teléfono" name="telefono" id="telefono">
+				<input type="email" placeholder="Correo" name="email" id="email">
+				<textarea placeholder="Agrega una breve descripción de tu evento." name="Comentarios" id="mensaje"></textarea> <br>
+				
+				<p id="mensajesFormularioGrave"></p>
+				<p id="mensajeExitoso"></p><br>
+				<p id="mensajesFormulario"></p>
+				
+				<button type="submit" class="botones">Envíar</button>	
 		    </form>
 		</div>
 	</div>
@@ -881,7 +887,14 @@ Susan Sontag
 		
 	
    </footer>
-	
-    <script src="cod.js"></script>
+<!-- Firebase links --><!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+<!-- Fin Firebase links -->
+    <script src="scripts/cod.js"></script>
+    <script src="scripts/contacto.js"></script>
 </body>
 </html>
