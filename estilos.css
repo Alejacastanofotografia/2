@@ -102,6 +102,7 @@ header {
 	cursor: pointer;
 	
 }
+.textoLogoHome {font-size: 1.5rem}
 .items li{
 	padding: 1rem;
 	transition: .7s;
@@ -634,11 +635,6 @@ footer{
     }
 }
 @media (max-width:800px){
-	.h1Main {
-	font-size: 1.5rem;
-	}
-}
-@media (max-width:800px){
 	.irArriba i{
 	right: 10px;
 	padding: 0.2rem 0.5rem;
@@ -650,6 +646,11 @@ footer{
 	color: #606060;
 	font-size: 1.5rem;
 		
+	}
+}
+@media (max-width: 400px){
+	.h1Main {
+	font-size: 1.5rem;
 	}
 }
 
@@ -680,6 +681,8 @@ footer{
 	transition: .2s;
 	background: none;
 }
+.
+.textoLogoHome {font-size: 1.5rem}
 .contenedorSliderScroll .items li{
 	padding: 1rem 2rem;	
 	transition: 0.5s;
@@ -695,7 +698,7 @@ footer{
 	opacity: 1;
 }
 .contenedorSliderScroll .items:first-child li a{
-	font-size: 1.2rem;
+	font-size: 1rem;
 	color: #505050;
 }
 .contenedorSliderScroll .items:last-child li a{
@@ -704,7 +707,7 @@ footer{
 	
 }
 .contenedorSliderScroll .h1Main {
-	font-size: 1rem;
+	font-size: 1.3rem;
 	padding: 0 1rem;
 	border: none;
 	border-style: none;
@@ -720,7 +723,7 @@ footer{
 	.contenedorSliderScroll{
 		display: flex;
 		justify-content: space-around;
-		padding: 4rem 0 0 0;
+		padding: 3rem 0 0 0;
 	}
 	.contenedorSliderScroll .h1Main{
 		position: absolute;
@@ -747,6 +750,9 @@ footer{
 		justify-content: ;
 		padding: 3.5rem 0 0 0;
 	}
+	.contenedorSliderScroll .h1Main {
+	font-size: 1rem;
+	}
 	.items:nth-child(3), .items:nth-child(5){
      	padding: 0;
 	}
@@ -754,12 +760,13 @@ footer{
 	padding: 0rem 0rem 1rem 0;	
 	transition: 0.5s;
     }
-	.contenedorSliderScroll .items{
+	.contenedorSliderScroll .items, .textoLogoHome {
 	font-size: .9rem;
 	}
 	.contenedorSliderScroll .items:first-child li a{
-		font-size:1rem;
+		font-size:rem;
 	}
+	#textoInicio{display: none}
 	.contenedorSliderScroll .items:last-child li a{
 		font-size:1.5rem;
 	}
