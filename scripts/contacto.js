@@ -54,7 +54,7 @@ formulario.addEventListener('submit', function(evt){
 		nombre.style.border = 'none';
 	}
 	else{	
-	    db.doc().set({
+	    db.doc(nombreUsuario).set({
 			a_nombre : nombreUsuario,
 			b_télefono : telefonoUsuario,
 			c_correo : emailUsuario,
@@ -113,10 +113,7 @@ function nuevoVisitante(){
 	
 	dbVisitantes.doc().set({
 		a_fecha : fecha,
-		a_width : width,
-		a_height : height,
-		b_widthDisponible : widthDisponible,
-		b_heightDisponible : heightDisponible,
+		b_Dimensiones :[width, height],
 	})
 	.then(function(){
 		console.log('nuevo user');
